@@ -2,7 +2,7 @@
 
 Generate a 3D model from almost any image on the web using the Meshy Image-to-3D API. Ideal for online stores and product assembly guides, allowing users to view products as interactive 3D models.
 
-This is a Manifest V3 Chrome extension demo. Hover over an image, click **To 3D**, and the extension opens a Chrome side panel where Meshy turns the selected image into a downloadable `.glb` model.
+This is a Manifest V3 Chrome extension. Hover over an image, click **To 3D**, and the extension opens a Chrome side panel where Meshy turns the selected image into a downloadable `.glb` model.
 
 ## What It Does
 
@@ -108,7 +108,7 @@ The generation sequence is:
 
 ## Permissions
 
-This demo requests:
+This extension requests:
 
 - `sidePanel` to show the generation workflow in Chrome's side panel
 - `contextMenus` to add the right-click image action
@@ -141,7 +141,7 @@ Check that your API key is valid, the Meshy account has available credits, and t
 
 Image to 3D generation is asynchronous. The extension polls Meshy every two seconds and updates progress when Meshy returns it.
 
-## Notes For Demo Images
+## Notes For Images
 
 Clear object-centric images work best:
 
