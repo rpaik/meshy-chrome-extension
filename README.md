@@ -15,9 +15,9 @@ This is a Manifest V3 Chrome extension demo. Hover over an image, click **To 3D*
 - Previews the generated `.glb` with `<model-viewer>`
 - Downloads the generated `.glb` file locally
 
-## Demo Flow
+## Using the Extension
 
-1. Install the extension unpacked in Chrome.
+1. Install the extension unpacked in Chrome. (Please see Requirements & Setup sections below)
 2. Add your Meshy API key in the extension options.
 3. Open a web page with a clear product, object, or character image.
 4. Hover over the image and click **To 3D**.
@@ -25,8 +25,6 @@ This is a Manifest V3 Chrome extension demo. Hover over an image, click **To 3D*
 6. Wait for the 3D model to complete.
 7. Rotate the model in the preview.
 8. Download the `.glb`.
-
-For a presenter-friendly walkthrough, see [DEMO_SCRIPT.md](DEMO_SCRIPT.md).
 
 ## Requirements
 
@@ -153,14 +151,13 @@ Clear object-centric images work best:
 
 Avoid images with heavy occlusion, tiny subjects, complex collages, or lots of text.
 
-## Project Status
+## Future Improvements
 
-This repo is a working demo, not a hardened production extension. Useful next improvements include:
+This repo is a working demo, not a hardened production extension. Here's a partial list of potential improvements:
 
 - Better status handling for Meshy API errors
-- Optional Meshy generation settings in the side panel
 - A gallery of recent generations
 - Support for multiple selected images
-- More restrictive host permissions
-- Automated extension smoke tests
+
+If you have other suggestions, please feel free to open an issue!
 
