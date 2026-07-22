@@ -58,7 +58,7 @@ Configure your Meshy API key:
 
 The API key is stored in `chrome.storage.local` and sent only in requests to `https://api.meshy.ai`.
 
-## Usage
+## Usage Options
 
 ### Generate From a Web Image
 
@@ -105,6 +105,8 @@ The generation sequence is:
 6. Extension polls `GET https://api.meshy.ai/openapi/v1/image-to-3d/{taskId}`.
 7. On success, the returned `.glb` URL is loaded into `<model-viewer>`.
 8. User can download the `.glb`.
+
+You can find more information in the Architecture page. 
 
 ## Permissions
 
