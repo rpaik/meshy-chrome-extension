@@ -17,11 +17,11 @@ This is a Manifest V3 Chrome extension. Hover over an image, click **To 3D**, an
 
 ## Using the Extension
 
-1. Install the extension unpacked in Chrome. (Please see [Requirements](https://github.com/rpaik/meshy-chrome-extension/blob/main/README.md#requirements) & [Setup](https://github.com/rpaik/meshy-chrome-extension/blob/main/README.md#setup) sections below)
-2. Add your Meshy API key in the extension options.
+1. Install the extension unpacked in Chrome. See [Requirements](#requirements) and [Setup](#setup) below.
+2. Add your Meshy API key in the extension options and click **Save Settings**.
 3. Open a web page with a clear product, object, or character image.
 4. Hover over the image and click **To 3D**.
-5. Open or watch the side panel as the extension submits the image to Meshy.
+5. If the side panel does not open automatically, click the **Meshy 3D Generator** toolbar icon.
 6. Wait for the 3D model to complete.
 7. Rotate the model in the preview.
 8. Download the `.glb`.
@@ -34,7 +34,7 @@ This is a Manifest V3 Chrome extension. Hover over an image, click **To 3D**, an
 
 ## Setup
 
-Clone the repo:
+Clone or download the repo:
 
 ```bash
 git clone https://github.com/rpaik/meshy-chrome-extension.git
@@ -46,45 +46,69 @@ Load the extension in Chrome:
 1. Open `chrome://extensions`.
 2. Turn on **Developer mode**.
 3. Click **Load unpacked**.
-4. Select this repo folder.
+4. Select the `meshy-chrome-extension` folder, the one that contains `manifest.json`.
+5. Confirm that **Meshy 3D Generator** appears in the extension list.
 
 Configure your Meshy API key:
 
 1. Find **Meshy 3D Generator** in `chrome://extensions`.
 2. Click **Details**.
-3. Click **Extension options**.
+3. Click **Extension options**. You can also right-click the extension's toolbar icon and choose **Options**.
 4. Paste your Meshy API key.
 5. Click **Save Settings**.
 
 The API key is stored in `chrome.storage.local` and sent only in requests to `https://api.meshy.ai`.
 
+Optional but helpful: pin the extension to the Chrome toolbar so the side panel is easy to open during demos.
+
 ## Usage Options
 
 ### Generate From a Web Image
 
-1. Visit a page with an image at least `100 x 100` pixels.
-2. Hover over the image.
-3. Click **To 3D**.
-4. If needed, click the extension icon to open the side panel.
-5. Wait for the model to finish.
+1. Visit a normal web page, such as an `https://` product or image page. Chrome does not run content scripts on pages like `chrome://extensions`, the Chrome Web Store, or some restricted browser pages.
+2. Find a clear image at least `100 x 100` pixels.
+3. Hover over the image.
+4. Click **To 3D**.
+5. If Chrome does not open the side panel automatically, click the **Meshy 3D Generator** toolbar icon. The extension stores the selected image and starts generation when the side panel opens.
+6. Wait for the model to finish, then rotate it in the preview or click **Download .glb**.
 
 ### Generate From the Context Menu
 
 1. Right-click an image.
 2. Choose **Generate 3D Model with Meshy**.
-3. Use the side panel to monitor the result.
+3. If the side panel does not open automatically, click the extension's toolbar icon.
+4. Wait for the model to finish.
 
 ### Generate From an Uploaded Image
 
-1. Click the extension icon to open the side panel.
+1. Click the extension's toolbar icon to open the side panel.
 2. Click **Upload Image**.
-3. Choose a local image file.
+3. Choose a local `.jpg`, `.jpeg`, or `.png` image file.
+4. Wait for the model to finish.
 
 ### Generate From the Clipboard
 
 1. Copy an image to your clipboard.
-2. Open the extension side panel.
+2. Click the extension's toolbar icon to open the side panel.
 3. Press `Cmd+V` on macOS or `Ctrl+V` on Windows/Linux.
+4. Wait for the model to finish.
+
+### Notes
+
+- Meshy currently accepts image inputs as public URLs or base64 data URIs, and this extension sends selected images as base64 data URIs.
+- Web-image generation can fail if the selected image is a temporary `blob:` URL, a protected image, or an unsupported image format. Use **Upload Image** as the fallback.
+- Image to 3D generation consumes Meshy credits and can take a little time depending on the input and service load.
+
+## Quick Demo Flow
+
+1. Install and configure the extension.
+2. Open a page with a clear object, product, or character image.
+3. Hover over the image.
+4. Click **To 3D**.
+5. If needed, click the extension icon to open the side panel.
+6. Wait for the model to finish.
+7. Rotate the model in the preview.
+8. Download the `.glb`.
 
 ## How It Works
 
@@ -160,6 +184,7 @@ This repo is a working demo, not a hardened production extension. Here's a parti
 - Better status handling for Meshy API errors
 - A gallery of recent generations
 - Support for multiple selected images
+- More restrictive host permissions
+- Automated extension smoke tests
 
 If you have other suggestions, please feel free to open an issue!
-
