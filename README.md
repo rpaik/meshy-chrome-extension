@@ -17,7 +17,7 @@ This is a Manifest V3 Chrome extension demo. Hover over an image, click **To 3D*
 
 ## Using the Extension
 
-1. Install the extension unpacked in Chrome. (Please see Requirements & Setup sections below)
+1. Install the extension unpacked in Chrome. (Please see [Requirements](https://github.com/rpaik/meshy-chrome-extension/blob/main/README.md#requirements) & [Setup](https://github.com/rpaik/meshy-chrome-extension/blob/main/README.md#setup) sections below)
 2. Add your Meshy API key in the extension options.
 3. Open a web page with a clear product, object, or character image.
 4. Hover over the image and click **To 3D**.
