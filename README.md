@@ -106,7 +106,7 @@ The generation sequence is:
 7. On success, the returned `.glb` URL is loaded into `<model-viewer>`.
 8. User can download the `.glb`.
 
-You can find more information in the Architecture page. 
+You can also find more information in the [Architecture page](https://github.com/rpaik/meshy-chrome-extension/blob/main/ARCHITECTURE.md). 
 
 ## Permissions
 
