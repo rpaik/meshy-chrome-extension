@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Meshy 3D Generator",
+  "version": "1.0",
+  "description": "Generate 3D models from any image on the web using Meshy AI.",
+  "permissions": [
+    "sidePanel",
+    "contextMenus",
+    "storage",
+    "scripting",
+    "tabs",
+    "downloads"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Meshy 3D Generator"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["content.css"],
+      "js": ["content.js"]
+    }
+  ]
+}

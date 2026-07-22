@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meshy 3D Generator</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-500"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+      <h2>Meshy 3D</h2>
+    </div>
+
+    <div id="initialState" class="state-container active">
+      <p class="instruction">Hover over any image on a webpage and click the "To 3D" button to generate a 3D model.</p>
+      <div style="margin: 24px 0; width: 100%; height: 1px; background: #e5e7eb;"></div>
+      <p class="instruction" style="margin-top: 0;">Or, upload/paste an image directly:</p>
+      <input type="file" id="fileUpload" accept="image/*" style="display: none;" />
+      <button id="uploadBtn" class="secondary">Upload Image</button>
+      <p style="font-size: 12px; color: #9ca3af; text-align: center; margin-top: 12px;">(You can also press Cmd+V to paste an image here)</p>
+    </div>
+
+    <div id="loadingState" class="state-container">
+      <div class="image-preview-container">
+        <img id="sourceImage" src="" alt="Source" />
+      </div>
+      <div class="spinner"></div>
+      <p id="loadingStatus">Generating 3D model...</p>
+      <div class="progress-bar-container">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+    </div>
+
+    <div id="resultState" class="state-container">
+      <div class="model-container">
+        <!-- We use module scripts so it must be loaded here -->
+        <model-viewer id="viewer" alt="Generated 3D Model" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+      </div>
+      <button id="downloadBtn">Download .glb</button>
+      <button id="resetBtn" class="secondary">Generate Another</button>
+    </div>
+
+    <div id="errorState" class="state-container">
+      <p class="error-icon">⚠️</p>
+      <p id="errorMessage" class="error-text">An error occurred.</p>
+      <button id="retryBtn">Try Again</button>
+    </div>
+  </div>
+
+  <script type="module" src="lib/model-viewer.min.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>

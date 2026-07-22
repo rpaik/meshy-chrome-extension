@@ -1,0 +1,32 @@
+/* Styles for the injected Meshy 3D hover widget */
+.meshy-hover-widget {
+  position: absolute;
+  z-index: 2147483647; /* Max z-index to be on top of everything */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #111827;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  pointer-events: auto;
+}
+
+.meshy-hover-widget:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.05);
+}
+
+.meshy-hover-widget svg {
+  width: 16px;
+  height: 16px;
+}
