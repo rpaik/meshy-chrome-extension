@@ -122,4 +122,4 @@ For developers, the benefits are massive:
 
 Stop wrestling with complex 3D pipelines. Check out the [Meshy AI Documentation](https://docs.meshy.ai/en/api) and start building!
 
-*P.S. We consider this extension a working prototype! If you have any questions, find bugs, or have ideas for improvements, please feel free to [open an issue on our GitHub repository](https://github.com/rpaik/meshy-chrome-extension/issues).*
+*P.S. We consider this extension a working prototype. If you have any questions, find bugs, or have ideas for improvements, please feel free to [open an issue on our GitHub repository](https://github.com/rpaik/meshy-chrome-extension/issues).*
