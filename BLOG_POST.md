@@ -57,6 +57,29 @@ The Side Panel handles the asynchronous polling and renders the final `.glb` fil
 
 The extension is comprised of four main pieces that communicate with the Meshy API:
 
+```mermaid
+sequenceDiagram
+    participant User
+    participant Content as content.js<br/>(Hover Widget)
+    participant Background as background.js<br/>(Service Worker)
+    participant SidePanel as sidepanel.js<br/>(Side Panel UI)
+    participant API as Meshy REST API
+
+    User->>Content: Hovers & Clicks "To 3D"
+    Content->>Background: Sends Image URL
+    User->>Background: OR Right-clicks image (Context Menu)
+    Background->>SidePanel: Opens Side Panel & Saves URL
+    SidePanel->>SidePanel: Converts Image to Base64
+    SidePanel->>API: POST /v1/image-to-3d
+    API-->>SidePanel: Returns Task ID
+    loop Async Polling
+        SidePanel->>API: GET /v1/image-to-3d/{taskId}
+        API-->>SidePanel: Status (Progress %)
+    end
+    API-->>SidePanel: Success (Returns .glb URL)
+    SidePanel->>User: Renders Model natively
+```
+
 * **`manifest.json`**: Defines the extension's blueprint, granting the necessary permissions (like `sidePanel` and `<all_urls>`).
 * **`content.js`**: Injects the hover widget on qualifying images and sends selected image URLs.
 * **`background.js`**: Acts as the invisible service worker. It handles the right-click Context Menu logic, temporarily stores the selected image URL, and triggers the Side Panel to open.
