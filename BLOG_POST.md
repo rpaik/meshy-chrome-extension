@@ -6,7 +6,7 @@ Have you ever browsed a furniture website, found a chair you loved, and wished y
 
 For years, converting 2D images into 3D models required expensive software, hours of manual modeling, or complex photogrammetry setups. But with the recent explosion of Generative AI, that barrier has vanished. 
 
-Today, we're going to explore how we built a **100% client-side Chrome Extension** that lets you right-click any image on the web and instantly generate a production-ready 3D model, powered by the **[Meshy API](https://www.meshy.ai/api)**.
+Today, we're going to explore how we built a **100% client-side Chrome Extension** that lets you right-click any image on the web and instantly generate a 3D model, powered by the **[Meshy API](https://www.meshy.ai/api)**.
 
 ---
 
