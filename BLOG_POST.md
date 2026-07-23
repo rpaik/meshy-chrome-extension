@@ -51,6 +51,8 @@ For PDFs, local files, or complex sites where the hover widget isn't ideal, the 
 The Side Panel handles the asynchronous polling and renders the final `.glb` file natively.
 ![Side Panel UI](./assets/images/side_panel_mockup_1784755200566.jpg)
 
+You can test this out on your local machine in 2-3 minutes. All you need to do is load the extension into Chrome and plug in a Meshy API Key to get started. (See the [README](https://github.com/rpaik/meshy-chrome-extension/blob/main/README.md) for detailed setup steps).
+
 ---
 
 ## 4. Under the Hood: How It Works
