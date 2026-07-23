@@ -2,7 +2,7 @@
 
 ![Meshy Logo](./assets/images/meshy_avatar.png)
 
-Have you ever browsed a furniture website, found a chair you loved, and wished you could instantly pull it out of the screen and see it in 3D? Or perhaps you've stared at a flat schematic in an installation manual, trying to mentally rotate it to understand how the pieces fit together? 
+Recently, I had to assemble an e-bike, and a 3D model would have been helpful for decoding some of the more confusing steps in the manual. Have you ever been in a similar situation—staring at a flat schematic, trying to mentally rotate it to figure out how the pieces fit together? Or perhaps you've browsed a furniture website and wished you could instantly pull a product right out of the screen to see it in 3D?
 
 For years, converting 2D images into 3D models required expensive software, hours of manual modeling, or complex photogrammetry setups. But with the recent explosion of Generative AI, that barrier has vanished. 
 
