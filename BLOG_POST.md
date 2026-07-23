@@ -89,7 +89,29 @@ sequenceDiagram
 
 ---
 
-## 5. Conclusion: Why You Should Use the Meshy API
+## 5. The Developer Experience: Simple REST Integration
+
+One of the best parts about building this extension was how straightforward the Meshy API is to integrate. There are no complex SDKs or steep learning curves. 
+
+Here is a look at the exact API request we use in the extension to generate the 3D model. It's just a standard `fetch` call with your API key:
+
+```javascript
+const response = await fetch('https://api.meshy.ai/openapi/v1/image-to-3d', {
+  method: 'POST',
+  headers: { 
+    'Authorization': `Bearer ${USER_API_KEY}`,
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ 
+    image_url: base64ImageData,
+    enable_pbr: true
+  })
+});
+```
+
+---
+
+## 6. Conclusion: Why You Should Use the Meshy API
 
 Building this extension took hours, not days or weeks. By using the Meshy REST API, we were able to completely offload the hardest parts of 3D generation. 
 
