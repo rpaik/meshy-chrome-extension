@@ -23,7 +23,7 @@ Here, we'll show that you don't need any of that. We wanted a tool that lived di
 
 ---
 
-## 2. The Solution: The Meshy 3D Generator Extension
+## 2. The Solution: 3D Generator Extension Powered by Meshy API
 
 We built an open-source Chrome Extension that completely streamlines this workflow. You can check out the full source code and installation instructions on our GitHub repository: **[rpaik/meshy-chrome-extension](https://github.com/rpaik/meshy-chrome-extension/blob/main/README.md)**.
 
