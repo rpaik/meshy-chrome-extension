@@ -89,7 +89,7 @@ sequenceDiagram
 
 ## 5. Conclusion: Why You Should Use the Meshy API
 
-Building this extension took hours, not months. By using the Meshy REST API, we were able to completely offload the hardest parts of 3D generation. 
+Building this extension took hours, not days or weeks. By using the Meshy REST API, we were able to completely offload the hardest parts of 3D generation. 
 
 For developers, the benefits are massive:
 * **Saves Money:** You don't pay for idle GPU servers or complex cloud infrastructure. You only pay for the exact models you generate via a simple API call (a typical API call for an image-to-3D generation costs only a few cents).
