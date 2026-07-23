@@ -93,7 +93,7 @@ sequenceDiagram
 
 One of the best parts about building this extension was how straightforward the Meshy API is to integrate. There are no complex SDKs or steep learning curves. 
 
-Here is a look at the exact API request we use in the extension to generate the 3D model. It's just a standard `fetch` call with your API key:
+Here is a look at the API request we use in the extension to generate the 3D model. It's just a standard `fetch` call with your API key:
 
 ```javascript
 const response = await fetch('https://api.meshy.ai/openapi/v1/image-to-3d', {
