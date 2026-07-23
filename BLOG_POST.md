@@ -57,6 +57,11 @@ The Side Panel handles the asynchronous polling and renders the final `.glb` fil
 
 The extension is comprised of four main pieces that communicate with the Meshy API:
 
+* **`manifest.json`**: Defines the extension's blueprint, granting the necessary permissions (like `sidePanel` and `<all_urls>`).
+* **`content.js`**: Injects the hover widget on qualifying images and sends selected image URLs.
+* **`background.js`**: Acts as the invisible service worker. It handles the right-click Context Menu logic, temporarily stores the selected image URL, and triggers the Side Panel to open.
+* **`sidepanel.js`**: The brains of the operation. It reads the captured image, converts it into a Base64 data URI, and handles all the `fetch` API requests to Meshy. Because 3D generation takes time, it runs an asynchronous polling loop against `GET /v1/image-to-3d/{taskId}` until the `.glb` file is ready to render.
+
 ```mermaid
 sequenceDiagram
     participant User
@@ -79,11 +84,6 @@ sequenceDiagram
     API-->>SidePanel: Success (Returns .glb URL)
     SidePanel->>User: Renders Model natively
 ```
-
-* **`manifest.json`**: Defines the extension's blueprint, granting the necessary permissions (like `sidePanel` and `<all_urls>`).
-* **`content.js`**: Injects the hover widget on qualifying images and sends selected image URLs.
-* **`background.js`**: Acts as the invisible service worker. It handles the right-click Context Menu logic, temporarily stores the selected image URL, and triggers the Side Panel to open.
-* **`sidepanel.js`**: The brains of the operation. It reads the captured image, converts it into a Base64 data URI, and handles all the `fetch` API requests to Meshy. Because 3D generation takes time, it runs an asynchronous polling loop against `GET /v1/image-to-3d/{taskId}` until the `.glb` file is ready to render.
 
 ---
 
